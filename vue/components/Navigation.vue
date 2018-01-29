@@ -230,7 +230,7 @@
       .logo {
         height: $logo-size;
         width: $logo-size;
-        background: url(../../images/spongie-mark.svg);
+        background: url(../../images/icons/spongie-mark.svg);
 
         svg {
           background: #f89a0d;
