@@ -2,13 +2,18 @@
   "name": "sponge-web-commons",
   "version": "0.0.1",
   "description": "Shared files between sponge web projects",
-  "main": "src/vue/index.js",
+  "main": "vue/index.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/felixoi/SpongeWebCommons.git"
   },
-  "author": "felixoi",
-  "license": "MIT",
+  "contributors": [
+    {
+      "name": "felixoi",
+      "url": "https://github.com/felixoi"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/felixoi/SpongeWebCommons/issues"
   },
