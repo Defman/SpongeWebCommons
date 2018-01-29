@@ -1,0 +1,15 @@
+{
+  "name": "sponge-web-commons",
+  "version": "0.0.1",
+  "description": "Shared files between sponge web projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixoi/SpongeWebCommons.git"
+  },
+  "author": "felixoi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/felixoi/SpongeWebCommons/issues"
+  },
+  "homepage": "https://spongepowered.org"
+}
