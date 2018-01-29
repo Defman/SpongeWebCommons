@@ -42,7 +42,7 @@
 </script>
 
 <style lang="scss">
-  @import "../styles/variables";
+  @import "../../styles/variables";
 
   #footer {
     text-align: center;

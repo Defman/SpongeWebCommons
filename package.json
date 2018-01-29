@@ -2,6 +2,7 @@
   "name": "sponge-web-commons",
   "version": "0.0.1",
   "description": "Shared files between sponge web projects",
+  "main": "src/vue/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/felixoi/SpongeWebCommons.git"

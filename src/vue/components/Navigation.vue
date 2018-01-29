@@ -109,7 +109,7 @@
 </script>
 
 <style lang="scss">
-  @import "../styles/variables";
+  @import "../../styles/variables";
 
   $nav-height: 4.063rem;
   $nav-padding: 1.5rem;
@@ -230,7 +230,7 @@
       .logo {
         height: $logo-size;
         width: $logo-size;
-        background: url(../assets/img/spongie-mark.svg);
+        background: url(../../images/spongie-mark.svg);
 
         svg {
           background: #f89a0d;
