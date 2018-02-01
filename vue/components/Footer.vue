@@ -32,12 +32,11 @@
 </template>
 
 <script>
-  export default {
-    components: {},
-    name: 'sponge-footer',
-    data() {
-      return {}
-    }
+  import Vue from "vue"
+  import Component from "vue-class-component"
+
+  @Component({})
+  export default class Footer extends Vue {
   }
 </script>
 

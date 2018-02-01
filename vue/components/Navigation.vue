@@ -60,57 +60,58 @@
 
 <script>
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  import Vue from "vue"
+  import Component from "vue-class-component"
 
-  export default {
+  @Component({
     components: {
       FontAwesomeIcon
-    },
-    name: 'sponge-navigation',
-    data() {
-      return {
-        spongeMenu: false,
-        subMenu: false
-      }
-    },
+    }
+  })
+  export default class Navigation extends Vue {
+    spongeMenu = false;
+    subMenu = false;
+
     mounted() {
       // Checks if user device has a small screen
       window.mobile = window.innerWidth <= 768;
       window.addEventListener("resize", function () {
         window.mobile = window.innerWidth <= 768;
       });
-    },
-    methods: {
-      showSpongeMenu: function () {
-        if (!window.mobile) { // Hover should be only enabled on wide screens
-          if (this.subMenu) {
-            this.subMenu = false;
-          }
+    }
 
-          this.spongeMenu = true;
-        }
-      },
-      hideSpongeMenu: function (event) {
-        if (!window.mobile) { // Hover should be only enabled on wide screens
-          if (this.spongeMenu && (!event.relatedTarget
-              || (event.relatedTarget && !event.relatedTarget.classList.contains("navbar-nav") && !event.relatedTarget.classList.contains("nav-link")))) {
-            this.spongeMenu = false;
-          }
-        }
-      },
-      toggleSpongeMenu: function () {
+    showSpongeMenu() {
+      if (!window.mobile) { // Hover should be only enabled on wide screens
         if (this.subMenu) {
           this.subMenu = false;
         }
 
-        this.spongeMenu = !this.spongeMenu;
-      },
-      toggleSubMenu: function () {
-        if (this.spongeMenu) {
+        this.spongeMenu = true;
+      }
+    }
+
+    hideSpongeMenu(event) {
+      if (!window.mobile) { // Hover should be only enabled on wide screens
+        if (this.spongeMenu && (!event.relatedTarget
+            || (event.relatedTarget && !event.relatedTarget.classList.contains("navbar-nav") && !event.relatedTarget.classList.contains("nav-link")))) {
           this.spongeMenu = false;
         }
-
-        this.subMenu = !this.subMenu;
       }
+    }
+    toggleSpongeMenu() {
+      if (this.subMenu) {
+        this.subMenu = false;
+      }
+
+      this.spongeMenu = !this.spongeMenu;
+    }
+
+    toggleSubMenu() {
+      if (this.spongeMenu) {
+        this.spongeMenu = false;
+      }
+
+      this.subMenu = !this.subMenu;
     }
   }
 </script>
