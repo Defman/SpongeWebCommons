@@ -68,7 +68,7 @@
       FontAwesomeIcon
     }
   })
-  export default class Navigation extends Vue {
+  export default class SpongeNavigation extends Vue {
     spongeMenu = false;
     subMenu = false;
 

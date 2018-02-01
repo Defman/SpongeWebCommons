@@ -36,7 +36,7 @@
   import Component from "vue-class-component"
 
   @Component({})
-  export default class Footer extends Vue {
+  export default class SpongeFooter extends Vue {
   }
 </script>
 
