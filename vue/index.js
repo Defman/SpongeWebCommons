@@ -3,8 +3,8 @@ import Footer from "./components/Footer.vue"
 
 const PluginName = {
 	install(Vue, options = {}) {
-		Vue.component(Navigation.name, Navigation);
-    Vue.component(Footer.name, Footer);
+		Vue.component("sponge-navigation", Navigation);
+    Vue.component("sponge-footer", Footer);
 	}
 };
 
