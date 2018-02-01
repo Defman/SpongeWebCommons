@@ -72,6 +72,13 @@
         subMenu: false
       }
     },
+    mounted() {
+      // Checks if user device has a small screen
+      window.mobile = window.innerWidth <= 768;
+      window.addEventListener("resize", function () {
+        window.mobile = window.innerWidth <= 768;
+      });
+    },
     methods: {
       showSpongeMenu: function () {
         if (!window.mobile) { // Hover should be only enabled on wide screens
@@ -111,7 +118,6 @@
 <style lang="scss">
   @import "../../styles/variables";
 
-  $nav-height: 4.063rem;
   $nav-padding: 1.5rem;
   $logo-size: 2.813rem;
   $nav-brand-width: 13.5rem; // manually define this to calculate the width of the dropdown
@@ -145,7 +151,7 @@
 
     @media (min-width: 768px) { //todo get breakpoints from bootstrap
       position: absolute;
-      top: $nav-height;
+      top: $sponge_navigation_height;
     }
   }
 
@@ -205,11 +211,11 @@
 
   .navbar {
     background: $sponge_grey;
-    min-height: $nav-height;
+    min-height: $sponge_navigation_height;
     padding: 0;
 
     .container {
-      max-height: $nav-height;
+      max-height: $sponge_navigation_height;
 
       @media (max-width: 768px) { //todo get breakpoints from bootstrap
         margin: 0;
@@ -219,7 +225,7 @@
     .navbar-brand {
       display: flex;
       align-items: center;
-      min-height: $nav-height;
+      min-height: $sponge_navigation_height;
       padding: 0 0.5rem 0 $nav-padding; // 0.5 is a hacky number created by ewout
       margin: 0;
 
