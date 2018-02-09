@@ -43,13 +43,18 @@
 <style lang="scss">
   @import "../../styles/variables";
 
+  $footer-font-color: #ffffff;
+  $footer-font-size: 0.875rem;
+  $footer-row-padding: 1rem 0;
+  $footer-row-terms-padding: 0.35rem;
+
   #footer {
     text-align: center;
-    color: #ffffff;
-    font-size: 0.875rem;
+    color: $footer-font-color;
+    font-size: $footer-font-size;
 
     .footer-row {
-      padding: 1rem 0;
+      padding: $footer-row-padding;
 
       p {
         margin: 0;
@@ -64,7 +69,7 @@
       }
 
       &.terms {
-        padding: 0.35rem;
+        padding: $footer-row-terms-padding;
         background: $sponge_grey_light;
       }
 
