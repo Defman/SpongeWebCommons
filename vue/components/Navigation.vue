@@ -121,13 +121,20 @@
 
   $nav-padding: 1.5rem;
   $logo-size: 2.813rem;
-  $nav-brand-width: 13.5rem; // manually define this to calculate the width of the dropdown
-  $space-logo-headline: 0.5rem;
+  $nav-brand-width: 13.75rem; // manually define this to calculate the width of the dropdown
+  $logo-padding: 0.5rem;
   $nav-toggler-padding: 1.5rem;
   $menu-mobile-border: 7px solid $sponge_grey_dark;
 
   .collapsing {
     transition: none;
+  }
+
+  .sponge-headline {
+    font-family: $sponge_headline_font;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
   }
 
   #sponge-menu {
@@ -227,7 +234,7 @@
       display: flex;
       align-items: center;
       min-height: $sponge_navigation_height;
-      padding: 0 0.5rem 0 $nav-padding; // 0.5 is a hacky number created by ewout
+      padding: 0 ($nav-padding - 0.5rem) 0 $nav-padding;
       margin: 0;
 
       &, * {
@@ -244,14 +251,19 @@
         }
       }
 
+      .sponge-headline {
+        height: $logo-size;
+        display: flex;
+        align-items: center;
+      }
+
       span {
         font-size: 23px;
         color: $sponge_yellow;
-        margin-left: $space-logo-headline;
+        margin: 0 $logo-padding;
       }
 
       svg {
-        margin: 0 0.25rem;
         color: #808080;
       }
 
