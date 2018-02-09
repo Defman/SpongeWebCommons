@@ -98,6 +98,7 @@
         }
       }
     }
+
     toggleSpongeMenu() {
       if (this.subMenu) {
         this.subMenu = false;
@@ -120,11 +121,30 @@
   @import "../../styles/variables";
 
   $nav-padding: 1.5rem;
-  $logo-size: 2.813rem;
-  $nav-brand-width: 13.75rem; // manually define this to calculate the width of the dropdown
-  $logo-padding: 0.5rem;
-  $nav-toggler-padding: 1.5rem;
-  $menu-mobile-border: 7px solid $sponge_grey_dark;
+  $nav-logo-size: 2.813rem;
+  $nav-brand-width: 14rem; // manually define this to calculate the width of the dropdown
+  $nav-brand-font-size: 1.438rem;
+  $nav-brand-padding: 0 ($nav-padding - 0.5rem) 0 $nav-padding;
+  $nav-brand-margin: 0;
+  $nav-logo: url(../../images/icons/spongie-mark.svg);
+  $nav-logo-padding: 0 0.5rem;
+  $nav-toggle-button-padding: 0 1.5rem;
+  $nav-indicator-color: #808080;
+
+  $nav-link-color: #f3f3f3;
+  $nav-link-font-size: 1.2rem;
+  $nav-link-padding: 0.75rem 1.5rem;
+  $nav-link-svg-margin: 0.8rem;
+
+  $nav-desktop-sub-menu-item-margin-right: 1rem;
+  $nav-desktop-sub-menu-link-font-size: 1rem;
+  $nav-desktop-sub-menu-item-padding: 0.75rem;
+
+  $nav-mobile-border: 7px solid $sponge_grey_dark;
+  $nav-mobile-padding: 0.5rem 0;
+  $nav-mobile-sponge-menu-padding: 0.5rem 0;
+  $nav-mobile-sponge-menu-link-padding: 0.45rem 0.75 + ($nav-logo-size / 2);
+  $nav-mobile-sponge-menu-link-font-size: 1.2rem;
 
   .collapsing {
     transition: none;
@@ -132,7 +152,7 @@
 
   .sponge-headline {
     font-family: $sponge_headline_font;
-    font-weight: 600;
+    font-weight: $sponge_headline_weight;
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -143,21 +163,21 @@
         flex-direction: column;
         width: $nav-brand-width;
         background: $sponge_grey_light;
-        padding: 0.5rem 0;
-        border-bottom: $menu-mobile-border;
+        padding: $nav-mobile-sponge-menu-padding;
+        border-bottom: $nav-mobile-border;
         border-top-color: $sponge_grey_light;
-        border-bottom: $menu-mobile-border;
+        border-bottom: $nav-mobile-border;
 
         .nav-item {
           .nav-link {
-            padding: 0.45rem 0.75 + ($logo-size / 2);
-            font-size: 1.2rem;
+            padding: $nav-mobile-sponge-menu-link-padding;
+            font-size: $nav-mobile-sponge-menu-link-font-size;
           }
         }
       }
     }
 
-    @media (min-width: 768px) { //todo get breakpoints from bootstrap
+    @media (min-width: 768px) {
       position: absolute;
       top: $sponge_navigation_height;
     }
@@ -167,15 +187,15 @@
     .navbar-nav.sponge-dark {
       @media (min-width: 768px) {
         .nav-item {
-          margin-right: 1rem;
+          margin-right: $nav-desktop-sub-menu-item-margin-right;
 
           &:last-child {
             margin-right: 0;
           }
 
           .nav-link {
-            font-size: 1rem;
-            padding: 0.75rem;
+            font-size: $nav-desktop-sub-menu-link-font-size;
+            padding: $nav-desktop-sub-menu-item-padding;
           }
         }
       }
@@ -187,31 +207,31 @@
       width: 100%;
 
       .nav-link {
-        color: #f3f3f3;
-        font-size: 1.2rem;
-        padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+        color: $nav-link-color;
+        font-size: $nav-link-font-size;
+        padding: $nav-link-padding;
 
         &.active, &.active:hover {
-          color: #f3f3f3;
+          color: $nav-link-color;
           background: $sponge_grey_dark;
         }
 
         &:hover, &:focus {
-          color: #f3f3f3;
+          color: $nav-link-color;
           background: $sponge_grey;
           outline: none;
         }
 
         svg {
-          margin-right: 0.8rem;
+          margin-right: $nav-link-svg-margin;
         }
       }
     }
 
-    @media (max-width: 768px) { //todo get breakpoints from bootstrap
-      border-bottom: $menu-mobile-border;
-      border-top: $menu-mobile-border;
-      padding: 0.5rem 0;
+    @media (max-width: 768px) {
+      border-bottom: $nav-mobile-border;
+      border-top: $nav-mobile-border;
+      padding: $nav-mobile-padding;
       width: 100vw;
       background: $sponge_grey_light;
     }
@@ -225,7 +245,7 @@
     .container {
       max-height: $sponge_navigation_height;
 
-      @media (max-width: 768px) { //todo get breakpoints from bootstrap
+      @media (max-width: 768px) {
         margin: 0;
       }
     }
@@ -234,37 +254,33 @@
       display: flex;
       align-items: center;
       min-height: $sponge_navigation_height;
-      padding: 0 ($nav-padding - 0.5rem) 0 $nav-padding;
-      margin: 0;
+      padding: $nav-brand-padding;
+      margin: $nav-brand-margin;
 
       &, * {
         user-select: none;
       }
 
       .logo {
-        height: $logo-size;
-        width: $logo-size;
-        background: url(../../images/icons/spongie-mark.svg);
-
-        svg {
-          background: #f89a0d;
-        }
+        height: $nav-logo-size;
+        width: $nav-logo-size;
+        background: $nav-logo;
       }
 
       .sponge-headline {
-        height: $logo-size;
+        height: $nav-logo-size;
         display: flex;
         align-items: center;
       }
 
       span {
-        font-size: 23px;
+        font-size: $nav-brand-font-size;
         color: $sponge_yellow;
-        margin: 0 $logo-padding;
+        margin: $nav-logo-padding;
       }
 
       svg {
-        color: #808080;
+        color: $nav-indicator-color;
       }
 
       &:hover, &:focus {
@@ -284,7 +300,7 @@
     }
 
     svg {
-      color: #808080;
+      color: $nav-indicator-color;
     }
 
     &:hover, &:focus {
@@ -310,7 +326,7 @@
       align-items: center;
       height: 100%;
 
-      padding: 0 $nav-toggler-padding;
+      padding: $nav-toggle-button-padding;
       border: none;
     }
   }
