@@ -20,22 +20,18 @@ $btn-dark-color: #ffffff;
   }
 }
 
-.btn-sponge-yellow {
-  background: $btn-yellow-background;
-  border-color: $btn-yellow-border;
-  color: $btn-yellow-color;
+@mixin button-variant($variant, $background, $background-hover, $border-color, $color) {
+  .#{$variant} {
+    background: $background;
+    border-color: $border-color;
+    color: $color;
 
-  &:hover, &:focus {
-    background: $btn-yellow-background-hover;
+    &:hover, &:focus {
+      background: $background-hover;
+      color: $color;
+    }
   }
 }
 
-.btn-sponge-dark {
-  background: $btn-dark-background;
-  border-color: $btn-dark-border;
-  color: $btn-dark-color;
-
-  &:hover {
-    background: $btn-dark-background-hover;
-  }
-}
+@include button-variant("sponge-yellow", $btn-yellow-background, $btn-yellow-background-hover, $btn-yellow-border, $btn-yellow-color);
+@include button-variant("sponge-dark", $btn-dark-background, $btn-dark-background-hover, $btn-dark-border, $btn-dark-color);
