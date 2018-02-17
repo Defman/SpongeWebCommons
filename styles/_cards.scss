@@ -1,12 +1,16 @@
+$card-border-radius: 0;
+$card-font-color: #fffffff;
+$card-background-color: $sponge_grey;
+
 .card {
-  border-radius: 0;
+  border-radius: $card-border-radius;
 
   .card-header, .card-footer {
-    background: $sponge_grey;
-    color: #ffffff;
+    background: $card-background-color;
+    color: $card-font-color;
 
     &:first-child, &:last-child {
-      border-radius: 0;
+      border-radius: $card-border-radius;
     }
   }
 }

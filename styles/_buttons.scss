@@ -1,5 +1,23 @@
+$btn-border-radius: 0;
+
+$btn-yellow-background: $sponge_yellow;
+$btn-yellow-background-hover: darken($sponge_yellow, 3);
+$btn-yellow-border: darken($sponge_yellow, 7);
+$btn-yellow-color: $sponge_yellow_text;
+
 .btn {
-  &.dark {
-    background: whitesmoke;
+  border-radius: $btn-border-radius;
+  border: 1px solid;
+  font-weight: 600;
+}
+
+.btn-sponge-yellow {
+  background: $btn-yellow-background;
+  border-color: $btn-yellow-border;
+  color: $btn-yellow-color;
+
+  &:hover, &:focus {
+    background: $btn-yellow-background-hover;
+    box-shadow: none;
   }
 }

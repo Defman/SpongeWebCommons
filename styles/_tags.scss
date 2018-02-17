@@ -1,25 +1,31 @@
 $tag-color: #2f2f2f;
 $tag-background-color: #f5f5f5;
+$tag-border-color: darken($tag-background-color, 10);
+$tag-height: 2em;
+$tag-margin: 5px;
+$tag-border-radius: 3px;
+$tag-font-size: 0.9rem;
+$tag-padding: 0 0.75rem;
 
 .tags {
   align-items: center;
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  font-size: $tag-font-size;
 
   .tag {
     color: $tag-color;
-    border: 1px solid darken($tag-background-color, 10);
+    border: 1px solid $tag-border-color;
     align-items: center;
     display: flex;
     background: $tag-background-color;
-    border-radius: 3px;
-    font-size: 0.75em;
-    height: 2em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
+    border-radius: $tag-border-radius;
+    height: $tag-height;
+    font-size: $tag-font-size;
+    padding: $tag-padding;
     white-space: nowrap;
-    margin: 5px;
+    margin: $tag-margin;
   }
 
   &.has-addons .tag {

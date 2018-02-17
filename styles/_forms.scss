@@ -1,0 +1,18 @@
+$form-border-radius: 0;
+$form-margin-bottom: 0.5rem;
+$form-border-color: $sponge_grey_accents;
+$form-border-color-hover: darken($sponge_grey_accents, 15);
+
+input.form-control, select.form-control {
+  border-radius: $form-border-radius;
+  border: 1px solid $form-border-color;
+
+  &:focus {
+    box-shadow: none;
+    border-color: $form-border-color-hover;
+  }
+}
+
+.form-control, .input-group {
+  margin-bottom:$form-margin-bottom;
+}
