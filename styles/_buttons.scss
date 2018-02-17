@@ -21,7 +21,7 @@ $btn-dark-color: #ffffff;
 }
 
 @mixin button-variant($variant, $background, $background-hover, $border-color, $color) {
-  .#{$variant} {
+  .btn-#{$variant} {
     background: $background;
     border-color: $border-color;
     color: $color;
