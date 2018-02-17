@@ -5,10 +5,19 @@ $btn-yellow-background-hover: darken($sponge_yellow, 3);
 $btn-yellow-border: darken($sponge_yellow, 7);
 $btn-yellow-color: $sponge_yellow_text;
 
+$btn-dark-background: $sponge_grey_dark;
+$btn-dark-background-hover: darken($sponge_grey_dark, 1);
+$btn-dark-border: $sponge_grey_light;
+$btn-dark-color: #ffffff;
+
 .btn {
   border-radius: $btn-border-radius;
   border: 1px solid;
   font-weight: 600;
+
+  &:hover, &:focus {
+    box-shadow: none;
+  }
 }
 
 .btn-sponge-yellow {
@@ -18,6 +27,15 @@ $btn-yellow-color: $sponge_yellow_text;
 
   &:hover, &:focus {
     background: $btn-yellow-background-hover;
-    box-shadow: none;
+  }
+}
+
+.btn-sponge-dark {
+  background: $btn-dark-background;
+  border-color: $btn-dark-border;
+  color: $btn-dark-color;
+
+  &:hover {
+    background: $btn-yellow-background-hover;
   }
 }

@@ -4,7 +4,7 @@ $tag-border-color: darken($tag-background-color, 10);
 $tag-height: 2em;
 $tag-margin: 5px;
 $tag-border-radius: 3px;
-$tag-font-size: 0.9rem;
+$tag-font-size: 0.75rem;
 $tag-padding: 0 0.75rem;
 
 .tags {
@@ -22,7 +22,6 @@ $tag-padding: 0 0.75rem;
     background: $tag-background-color;
     border-radius: $tag-border-radius;
     height: $tag-height;
-    font-size: $tag-font-size;
     padding: $tag-padding;
     white-space: nowrap;
     margin: $tag-margin;
